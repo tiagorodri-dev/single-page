@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+.container-fluid {
+    min-width: 100vw;
+    min-height: 100vh;
+    background: #bdc3c7;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+    padding: 20px;
+}
+
+.row {
+    gap: 50px
+}
+
+.content-form {
+    background: linear-gradient(135deg, #292b2c, #464a4f);
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+    height: auto;
+    max-width: 100%;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.image-container {
+    max-width: 100%;
+    text-align: center;
+    padding: 10px;
+}
+
+.image-container text {
+    color: #3d3e3b;
+}
+
+.image-container h3 {
+    height: 100px;
+}
+
+.image-container img {
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 80%;
+}
+
+/* Formulário */
+#leadFormContainer {
+    max-width: 400px;
+    width: 100%;
+}
+
+/* Responsividade */
+@media (max-width: 767px) {
+    .content-form {
+        padding: 15px;
+    }
+
+    .image-container img {
+        max-width: 70%;
+    }
+
+    .row {
+        gap: 0px;
+    }
+}

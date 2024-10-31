@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Suplementação</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container-fluid lead-form-section">
+        <section class="d-flex flex-wrap justify-content-center align-items-center">
+            <section class="col-lg-6 col-12 text-center image-container">
+                <h3 class="text fw-bold">Transforme seu Corpo e Saúde! Receba Dicas Exclusivas e Ofertas Incríveis em Suplementos!</h3>
+                <img src="assets/images/suplementacao.jpg" alt="Imagem de Suplemento" class="img-fluid">
+                <p class="text mt-3">Quer elevar sua performance, saúde e bem-estar? Cadastre-se agora e tenha acesso a conteúdos exclusivos, recomendações de especialistas e promoções de suplementos sob medida para você!</p>
+            </section>
+
+            <section id="leadFormContainer" class="col-lg-6 col-12 content-form p-4 p-lg-5">
+                <p class="text-white text-center mb-4">
+                    Fique por dentro agora mesmo! Basta preencher o formulário abaixo.
+                </p>
+
+                <form id="leadForm">
+                    <div class="mb-3">
+                        <label for="nome" class="form-label text-white">Nome:</label>
+                        <input type="text" class="form-control" id="nome" placeholder="Primeiro nome" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label text-white">E-mail:</label>
+                        <input type="email" class="form-control" id="email" placeholder="Seu melhor E-mail" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="telefone" class="form-label text-white">Telefone:</label>
+                        <input type="text" class="form-control" id="telefone" placeholder="Seu telefone" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100 mt-4 btn-animate">Cadastrar</button>
+                </form>
+            </section>
+        </sec>
+    </div>
+
+    <div id="productPage" class="d-none">
+        <header class="sticky-top p-3 bg-dark text-white">
+            <h1 class="text-center">Bem-vindo, <span id="userName"></span>!</h1>
+        </header>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
