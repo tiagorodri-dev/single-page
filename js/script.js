@@ -1,41 +1,65 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const form = document.getElementById("leadForm");
+document.addEventListener("DOMContentLoaded", function () {
+    const leadForm = document.getElementById("leadForm");
     const productPage = document.getElementById("productPage");
-    const leadFormContainer = document.getElementById("leadFormContainer");
-    const userNameDisplay = document.getElementById("userName");
+    const userNameSpan = document.getElementById("userName");
+
+    // Máscara para o campo de telefone
     const telefoneInput = document.getElementById("telefone");
 
-    // Máscara para o telefone
-    telefoneInput.addEventListener("input", (e) => {
-        let value = e.target.value.replace(/\D/g, "");
-        value = value.replace(/^(\d{2})(\d{5})(\d{4})$/, "($1) $2-$3");
-        e.target.value = value;
+    telefoneInput.addEventListener("input", function () {
+        let value = telefoneInput.value.replace(/\D/g, "");
+        value = value.substring(0, 11);
+
+        value = value.replace(/^(\d{2})(\d)/g, "($1) $2");
+        value = value.replace(/(\d{5})(\d)/, "$1-$2");
+
+        telefoneInput.value = value;
     });
 
-    form.addEventListener("submit", (e) => {
-        e.preventDefault();
+    // Manipula o envio do formulário
+    leadForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+
         const nome = document.getElementById("nome").value;
-        userNameDisplay.textContent = nome;
-        leadFormContainer.classList.add("d-none");
+        const email = document.getElementById("email").value;
+        const telefone = document.getElementById("telefone").value;
+
+        // Validação básica de email e telefone
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(email)) {
+            alert("Por favor, insira um e-mail válido.");
+            return;
+        }
+
+        // Exibe o nome do usuário na página de produto
+        userNameSpan.textContent = nome;
+
+        // Exibe a página de produto e oculta o formulário
         productPage.classList.remove("d-none");
+        document.querySelector(".lead-form-section").style.display = "none";
     });
 });
 
-// Abre modal de imagem
-const galleryImages = document.querySelectorAll(".gallery-image");
-const modalImg = document.getElementById("modalImg");
+const countdownTimer = document.getElementById("countdownTimer");
+const minutesElement = document.getElementById("minutes");
+const secondsElement = document.getElementById("seconds");
 
-galleryImages.forEach((img) => {
-    img.addEventListener("click", () => {
-        modalImg.src = img.dataset.img;
-    });
-});
+let countdownTime = 5 * 60; // Por exemplo, 5 minutos em segundos
 
-// Timer Countdown
-let countdown = 600; // em segundos
-setInterval(() => {
-    const minutes = Math.floor(countdown / 60);
-    const seconds = countdown % 60;
-    document.getElementById("timer").textContent = `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
-    if (countdown > 0) countdown--;
-}, 1000);
+function updateCountdown() {
+    const minutes = Math.floor(countdownTime / 60);
+    const seconds = countdownTime % 60;
+
+    minutesElement.textContent = String(minutes).padStart(2, '0');
+    secondsElement.textContent = String(seconds).padStart(2, '0');
+
+    if (countdownTime > 0) {
+        countdownTime--;
+    } else {
+        clearInterval(timerInterval);
+        // Lógica adicional quando o tempo acaba, se necessário
+    }
+}
+
+const timerInterval = setInterval(updateCountdown, 1000);
+

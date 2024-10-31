@@ -1,19 +1,28 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página de Suplementação</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Suplementação Fit</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
     <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
     <div class="container-fluid lead-form-section">
         <section class="d-flex flex-wrap justify-content-center align-items-center">
             <section class="col-lg-6 col-12 text-center image-container">
-                <h3 class="text fw-bold">Transforme seu Corpo e Saúde! Receba Dicas Exclusivas e Ofertas Incríveis em Suplementos!</h3>
-                <img src="assets/images/suplementacao.webp" alt="Imagem de Suplemento" class="img-fluid" width="600" height="400" loading="eager">
-                <p class="text mt-3">Quer elevar sua performance, saúde e bem-estar? Cadastre-se agora e tenha acesso a conteúdos exclusivos, recomendações de especialistas e promoções de suplementos sob medida para você!</p>
+                <h3 class="text fw-bold">Transforme seu Corpo e Saúde! Receba Dicas Exclusivas e Ofertas Incríveis em
+                    Suplementos!</h3>
+                <img src="assets/images/suplementacao.webp" alt="Imagem de Suplemento" class="img-fluid" width="600"
+                    height="400" loading="eager">
+                <p class="text mt-3">Quer elevar sua performance, saúde e bem-estar? Cadastre-se agora e tenha acesso a
+                    conteúdos exclusivos, recomendações de especialistas e promoções de suplementos sob medida para
+                    você!</p>
             </section>
 
             <section id="leadFormContainer" class="col-lg-6 col-12 content-form p-4 p-lg-5">
@@ -24,7 +33,7 @@
                 <form id="leadForm">
                     <div class="mb-3">
                         <label for="nome" class="form-label text-white">Nome:</label>
-                        <input type="text" class="form-control" id="nome" placeholder="Primeiro nome" required>
+                        <input type="text" class="form-control" id="nome" placeholder="Seu nome" required>
                     </div>
                     <div class="mb-3">
                         <label for="email" class="form-label text-white">E-mail:</label>
@@ -37,15 +46,162 @@
                     <button type="submit" class="btn btn-primary w-100 mt-4 btn-animate">Cadastrar</button>
                 </form>
             </section>
-        </sec>
     </div>
 
     <div id="productPage" class="d-none">
         <header class="sticky-top p-3 bg-dark text-white">
             <h1 class="text-center">Bem-vindo, <span id="userName"></span>!</h1>
+            <a href="">Sobre o produto</a>
+            <a href="">Mais detalhes</a>
+            <a href="">Depoimentos</a>
         </header>
+
+        <div id="heroSection" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="assets/images/banner1.jpg" class="d-block w-100" alt="Produto 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/images/banner2.jpg" class="d-block w-100" alt="Produto 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/images/banner3.jpg" class="d-block w-100" alt="Produto 3">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroSection" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#heroSection" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+        <section id="aboutSection" class="p-4 container">
+            <div class="d-flex flex-column flex-lg-row align-items-center justify-content-between">
+                <div class="text-content mb-4 mb-lg-0">
+                    <h2>Sobre o Produto</h2>
+                    <p>Este produto é projetado para maximizar sua performance física e melhorar seu bem-estar. Com ingredientes
+                        de alta qualidade, ele é ideal para atletas e entusiastas do fitness.</p>
+                    <ul>
+                        <li>Feito com ingredientes naturais.</li>
+                        <li>Garantia de satisfação.</li>
+                        <li>Disponível em várias embalagens.</li>
+                    </ul>
+                </div>
+
+                <div class="image-content">
+                    <img src="assets/images/produto.webp" alt="Sobre o Produto" class="img-fluid" width="500" height="400" loading="eager">
+                </div>
+            </div>
+        </section>
+
+        <section id="gallerySection" class="p-4">
+            <h2>Galeria de Imagens</h2>
+            <div class="row">
+                <div class="col-4">
+                    <img src="assets/images/gallery1.jpg" class="img-fluid" data-bs-toggle="modal"
+                        data-bs-target="#galleryModal">
+                </div>
+                <div class="col-4">
+                    <img src="assets/images/gallery2.jpg" class="img-fluid" data-bs-toggle="modal"
+                        data-bs-target="#galleryModal">
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonialsSection" class="p-4">
+            <h2>Depoimentos</h2>
+            <div id="testimonialsCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <p>"Produto excelente, mudou minha vida!"</p>
+                    </div>
+                    <div class="carousel-item">
+                        <p>"Ótima qualidade e preço justo."</p>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#testimonialsCarousel"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#testimonialsCarousel"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </section>
+
+        <section id="countdownSection" class="p-4 text-center">
+            <div class="d-flex align-items-center justify-content-center gap-3">
+                <i class="fas fa-stopwatch fa-2x"></i> <h2>Promoção por Tempo Limitado</h2>
+            </div>
+            <div id="countdownTimer" class="display-4 d-flex justify-content-center align-items-center gap-3">
+                <div class="time-box">
+                    <span id="minutes" class="time-value">00</span>
+                    <span class="time-label">Min</span>
+                </div>
+                <div class="time-box">
+                    <span id="seconds" class="time-value">00</span>
+                    <span class="time-label">Seg</span>
+                </div>
+            </div>
+            <button class="btn btn-primary mt-3">Compre Agora</button>
+        </section>
+
+        <footer class="bg-dark text-white pt-5 pb-4">
+            <div class="container text-center text-md-start">
+                <div class="row text-center text-md-start">
+                    <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                        <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Suplementação Fit</h5>
+                        <p>
+                            Elevando seu bem-estar e performance com os melhores suplementos. Qualidade e confiança para
+                            transformar sua saúde.
+                        </p>
+                    </div>
+
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                        <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Links úteis</h5>
+                        <p><a href="#" class="text-white" style="text-decoration: none;">Sobre nós</a></p>
+                        <p><a href="#" class="text-white" style="text-decoration: none;">Serviços</a></p>
+                        <p><a href="#" class="text-white" style="text-decoration: none;">Contato</a></p>
+                        <p><a href="#" class="text-white" style="text-decoration: none;">Termos de Uso</a></p>
+                    </div>
+
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+                        <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Produtos</h5>
+                        <p><a href="#" class="text-white" style="text-decoration: none;">Proteínas</a></p>
+                        <p><a href="#" class="text-white" style="text-decoration: none;">Vitaminas</a></p>
+                        <p><a href="#" class="text-white" style="text-decoration: none;">Aminoácidos</a></p>
+                        <p><a href="#" class="text-white" style="text-decoration: none;">Energéticos</a></p>
+                    </div>
+
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+                        <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Contato</h5>
+                        <p><i class="fas fa-home mr-3"></i> Rua Fictícia, 123, São Paulo - SP</p>
+                        <p><i class="fas fa-envelope mr-3"></i> contato@suplementacaofit.com.br</p>
+                        <p><i class="fas fa-phone mr-3"></i> +55 (11) 1234-5678</p>
+                        <a href="#" class="text-white me-4"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white me-4"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white me-4"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+
+                <div class="row align-items-center mt-3">
+                    <div class="col-md-7 col-lg-8 text-center text-md-start">
+                        <p>© 2024 Suplementação Fit. Todos os direitos reservados.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
     </div>
 
     <script src="js/script.js" defer></script>
 </body>
+
 </html>
