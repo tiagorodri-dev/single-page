@@ -33,7 +33,7 @@
                 <form id="leadForm">
                     <div class="mb-3">
                         <label for="nome" class="form-label text-white">Nome:</label>
-                        <input type="text" class="form-control" id="nome" placeholder="Seu nome" required>
+                        <input type="text" class="form-control" id="nome" placeholder="Seu nome" autofocus required>
                     </div>
                     <div class="mb-3">
                         <label for="email" class="form-label text-white">E-mail:</label>
@@ -49,14 +49,34 @@
     </div>
 
     <div id="productPage" class="d-none">
-        <header class="sticky-top p-3 bg-dark text-white">
-            <h1 class="text-center">Bem-vindo, <span id="userName"></span>!</h1>
-            <a href="">Sobre o produto</a>
-            <a href="">Mais detalhes</a>
-            <a href="">Depoimentos</a>
-        </header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+            <div class="container d-flex align-items-center justify-content-between">
+                <a class="navbar-brand text-white text-uppercase d-flex align-items-center justify-content-between gap-3" href="#">
+                    <img src="assets/images/logo.webp" alt="Logo" width="20" class="d-inline-block align-text-top">
+                    <span>Suplementação Fit</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-        <div id="heroSection" class="carousel slide" data-bs-ride="carousel">
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#aboutSection">Sobre o Produto</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Mais Detalhes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#testimonialsSection">Depoimentos</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <h4 class="text-center overflow-hidden">Bem-vindo, <span id="userName"></span>!</h5>
+        <!-- <div id="heroSection" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <img src="assets/images/banner1.jpg" class="d-block w-100" alt="Produto 1">
@@ -76,12 +96,12 @@
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
             </button>
-        </div>
+        </div> -->
 
-        <section id="aboutSection" class="p-4 container">
+        <section id="aboutSection" class="p-4">
             <div class="d-flex flex-column flex-lg-row align-items-center justify-content-between">
                 <div class="text-content mb-4 mb-lg-0">
-                    <h2>Sobre o Produto</h2>
+                    <h2 class="overflow-hidden">Sobre o Produto</h2>
                     <p>Este produto é projetado para maximizar sua performance física e melhorar seu bem-estar. Com ingredientes
                         de alta qualidade, ele é ideal para atletas e entusiastas do fitness.</p>
                     <ul>
@@ -98,21 +118,21 @@
         </section>
 
         <section id="gallerySection" class="p-4">
-            <h2>Galeria de Imagens</h2>
+            <h2 class="overflow-hidden">Galeria de Imagens</h2>
             <div class="row">
                 <div class="col-4">
-                    <img src="assets/images/gallery1.jpg" class="img-fluid" data-bs-toggle="modal"
+                    <img src="assets/images/produto.webp" class="img-fluid" data-bs-toggle="modal"
                         data-bs-target="#galleryModal">
                 </div>
                 <div class="col-4">
-                    <img src="assets/images/gallery2.jpg" class="img-fluid" data-bs-toggle="modal"
+                    <img src="assets/images/produto.webp" class="img-fluid" data-bs-toggle="modal"
                         data-bs-target="#galleryModal">
                 </div>
             </div>
         </section>
 
         <section id="testimonialsSection" class="p-4">
-            <h2>Depoimentos</h2>
+            <h2 class="overflow-hidden">Depoimentos</h2>
             <div id="testimonialsCarousel" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
@@ -137,26 +157,26 @@
 
         <section id="countdownSection" class="p-4 text-center">
             <div class="d-flex align-items-center justify-content-center gap-3">
-                <i class="fas fa-stopwatch fa-2x"></i> <h2>Promoção por Tempo Limitado</h2>
+                <i class="fas fa-stopwatch fa-2x overflow-hidden"></i> <h2 class="overflow-hidden">Promoção por Tempo Limitado</h2>
             </div>
             <div id="countdownTimer" class="display-4 d-flex justify-content-center align-items-center gap-3">
                 <div class="time-box">
-                    <span id="minutes" class="time-value">00</span>
-                    <span class="time-label">Min</span>
+                    <span id="minutes" class="time-value overflow-hidden">00</span>
+                    <span class="time-label overflow-hidden">Min</span>
                 </div>
                 <div class="time-box">
-                    <span id="seconds" class="time-value">00</span>
-                    <span class="time-label">Seg</span>
+                    <span id="seconds" class="time-value overflow-hidden">00</span>
+                    <span class="time-label overflow-hidden">Seg</span>
                 </div>
             </div>
-            <button class="btn btn-primary mt-3">Compre Agora</button>
+            <button class="btn btn-primary mt-3 btn-pulsar">Comprar Agora</button>
         </section>
 
         <footer class="bg-dark text-white pt-5 pb-4">
             <div class="container text-center text-md-start">
                 <div class="row text-center text-md-start">
                     <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-                        <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Suplementação Fit</h5>
+                        <h5 class="text-uppercase mb-4 font-weight-bold text-warning overflow-hidden">Suplementação Fit</h5>
                         <p>
                             Elevando seu bem-estar e performance com os melhores suplementos. Qualidade e confiança para
                             transformar sua saúde.
@@ -164,7 +184,7 @@
                     </div>
 
                     <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-                        <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Links úteis</h5>
+                        <h5 class="text-uppercase mb-4 font-weight-bold text-warning overflow-hidden">Links úteis</h5>
                         <p><a href="#" class="text-white" style="text-decoration: none;">Sobre nós</a></p>
                         <p><a href="#" class="text-white" style="text-decoration: none;">Serviços</a></p>
                         <p><a href="#" class="text-white" style="text-decoration: none;">Contato</a></p>
@@ -172,7 +192,7 @@
                     </div>
 
                     <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
-                        <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Produtos</h5>
+                        <h5 class="text-uppercase mb-4 font-weight-bold text-warning overflow-hidden">Produtos</h5>
                         <p><a href="#" class="text-white" style="text-decoration: none;">Proteínas</a></p>
                         <p><a href="#" class="text-white" style="text-decoration: none;">Vitaminas</a></p>
                         <p><a href="#" class="text-white" style="text-decoration: none;">Aminoácidos</a></p>
@@ -180,7 +200,7 @@
                     </div>
 
                     <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
-                        <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Contato</h5>
+                        <h5 class="text-uppercase mb-4 font-weight-bold text-warning overflow-hidden">Contato</h5>
                         <p><i class="fas fa-home mr-3"></i> Rua Fictícia, 123, São Paulo - SP</p>
                         <p><i class="fas fa-envelope mr-3"></i> contato@suplementacaofit.com.br</p>
                         <p><i class="fas fa-phone mr-3"></i> +55 (11) 1234-5678</p>
