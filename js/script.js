@@ -1,9 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     const leadForm = document.getElementById("leadForm");
     const productPage = document.getElementById("productPage");
-    const userNameSpan = document.getElementById("userName");
-
-    // Máscara para o campo de telefone
     const telefoneInput = document.getElementById("telefone");
 
     telefoneInput.addEventListener("input", function () {
@@ -31,10 +28,8 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        // Exibe o nome do usuário na página de produto
-        userNameSpan.textContent = nome;
+        alert(`Olá, ${nome}! Seja bem-vindo(a) à Suplementação Fit!`);
 
-        // Exibe a página de produto e oculta o formulário
         productPage.classList.remove("d-none");
         document.querySelector(".lead-form-section").style.display = "none";
     });
@@ -44,7 +39,7 @@ const countdownTimer = document.getElementById("countdownTimer");
 const minutesElement = document.getElementById("minutes");
 const secondsElement = document.getElementById("seconds");
 
-let countdownTime = 5 * 60; // Por exemplo, 5 minutos em segundos
+let countdownTime = 5 * 60;
 
 function updateCountdown() {
     const minutes = Math.floor(countdownTime / 60);
@@ -62,6 +57,20 @@ function updateCountdown() {
 }
 
 const timerInterval = setInterval(updateCountdown, 1000);
+
+
+// Trecho que faz thumbnails
+const mainImage = document.getElementById('mainImage');
+const thumbnails = document.querySelectorAll('.thumbnail');
+
+thumbnails.forEach(thumbnail => {
+    thumbnail.addEventListener('click', () => {
+        mainImage.src = thumbnail.dataset.full;
+        thumbnails.forEach(thumb => thumb.classList.remove('active'));
+        thumbnail.classList.add('active');
+    });
+});
+
 
 // Trecho que realiza modal e imagens da galeria
 const images = document.querySelectorAll('.gallery-image');
