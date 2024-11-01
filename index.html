@@ -46,10 +46,11 @@
                     <button type="submit" class="btn btn-primary w-100 mt-4 btn-animate">Cadastrar</button>
                 </form>
             </section>
+        </section>
     </div>
 
     <div id="productPage" class="d-none">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
             <div class="container d-flex align-items-center justify-content-between">
                 <a class="navbar-brand text-white text-uppercase d-flex align-items-center justify-content-between gap-3" href="#">
                     <img src="assets/images/logo.webp" alt="Logo" width="20" class="d-inline-block align-text-top">
@@ -119,17 +120,40 @@
 
         <section id="gallerySection" class="p-4">
             <h2 class="overflow-hidden">Galeria de Imagens</h2>
-            <div class="row">
-                <div class="col-4">
-                    <img src="assets/images/produto.webp" class="img-fluid" data-bs-toggle="modal"
-                        data-bs-target="#galleryModal">
+            <div class="image-gallery d-flex align-items-center justify-content-center flex-wrap">
+                <div>
+                    <img src="assets/images/produto.webp" class="img-fluid gallery-image" width="200" data-index="0">
                 </div>
-                <div class="col-4">
-                    <img src="assets/images/produto.webp" class="img-fluid" data-bs-toggle="modal"
-                        data-bs-target="#galleryModal">
+                <div>
+                    <img src="assets/images/produto1.webp" class="img-fluid gallery-image" width="100" data-index="1">
+                </div>
+                <div>
+                    <img src="assets/images/produto2.webp" class="img-fluid gallery-image" width="100" data-index="2">
+                </div>
+                <div>
+                    <img src="assets/images/produto3.webp" class="img-fluid gallery-image" width="100" data-index="3">
                 </div>
             </div>
         </section>
+
+        <!-- Modal para Visualização em Tela Cheia -->
+        <div class="modal fade" id="galleryModal" tabindex="-1" aria-labelledby="galleryModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered custom-modal modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="galleryModalLabel">Visualização da Imagem</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body text-center">
+                        <img src="" id="modalImage" class="img-fluid">
+                    </div>
+                    <div class="modal-footer justify-content-between">
+                        <button type="button" class="btn btn-secondary" id="prevButton">Anterior</button>
+                        <button type="button" class="btn btn-secondary" id="nextButton">Próxima</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <section id="testimonialsSection" class="p-4">
             <h2 class="overflow-hidden">Depoimentos</h2>
@@ -222,6 +246,7 @@
     </div>
 
     <script src="js/script.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 
 </html>

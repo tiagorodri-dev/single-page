@@ -63,4 +63,32 @@ function updateCountdown() {
 
 const timerInterval = setInterval(updateCountdown, 1000);
 
+// Trecho que realiza modal e imagens da galeria
+const images = document.querySelectorAll('.gallery-image');
+    const modalImage = document.getElementById('modalImage');
+    const galleryModal = new bootstrap.Modal(document.getElementById('galleryModal'));
+    let currentIndex = 0;
 
+    // Função para exibir a imagem no modal
+    function showImage(index) {
+        currentIndex = index;
+        modalImage.src = images[currentIndex].src;
+        galleryModal.show();
+    }
+
+    // Evento para abrir o modal ao clicar na imagem
+    images.forEach((img, index) => {
+        img.addEventListener('click', () => showImage(index));
+    });
+
+    // Navegação para a próxima imagem
+    document.getElementById('nextButton').addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % images.length;
+        showImage(currentIndex);
+    });
+
+    // Navegação para a imagem anterior
+    document.getElementById('prevButton').addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        showImage(currentIndex);
+    });

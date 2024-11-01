@@ -57,6 +57,15 @@
     width: 100%;
 }
 
+.gallery-image {
+    cursor: pointer;
+}
+
+.custom-modal {
+    max-width: 400px; /* Ajuste conforme necessário */
+    width: 100%; /* Para garantir que seja responsivo */
+}
+
 #countdownSection {
     background-color: #f8f9fa;
     border-radius: 8px;
@@ -116,5 +125,14 @@
 
     .row {
         gap: 0px;
+    }
+
+    .image-gallery {
+        flex-direction: column;
+    }
+
+    .custom-modal {
+        max-width: 50%;
+        margin: auto;
     }
 }
