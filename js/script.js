@@ -52,7 +52,6 @@ function updateCountdown() {
         countdownTime--;
     } else {
         clearInterval(timerInterval);
-        // Lógica adicional quando o tempo acaba, se necessário
     }
 }
 
@@ -78,26 +77,75 @@ const images = document.querySelectorAll('.gallery-image');
     const galleryModal = new bootstrap.Modal(document.getElementById('galleryModal'));
     let currentIndex = 0;
 
-    // Função para exibir a imagem no modal
     function showImage(index) {
         currentIndex = index;
         modalImage.src = images[currentIndex].src;
         galleryModal.show();
     }
 
-    // Evento para abrir o modal ao clicar na imagem
     images.forEach((img, index) => {
         img.addEventListener('click', () => showImage(index));
     });
 
-    // Navegação para a próxima imagem
     document.getElementById('nextButton').addEventListener('click', () => {
         currentIndex = (currentIndex + 1) % images.length;
         showImage(currentIndex);
     });
 
-    // Navegação para a imagem anterior
     document.getElementById('prevButton').addEventListener('click', () => {
         currentIndex = (currentIndex - 1 + images.length) % images.length;
         showImage(currentIndex);
     });
+
+    const carousel = document.getElementById('testimonialsCarousel');
+    let isDragging = false;
+    let startPos = 0;
+    let currentTranslate = 0;
+    let prevTranslate = 0;
+    let animationID;
+
+    // Funções para o movimento de arraste
+    carousel.addEventListener('mousedown', dragStart);
+    carousel.addEventListener('touchstart', dragStart);
+    carousel.addEventListener('mouseup', dragEnd);
+    carousel.addEventListener('mouseleave', dragEnd);
+    carousel.addEventListener('touchend', dragEnd);
+    carousel.addEventListener('mousemove', dragMove);
+    carousel.addEventListener('touchmove', dragMove);
+
+    function dragStart(event) {
+        isDragging = true;
+        startPos = getPositionX(event);
+        animationID = requestAnimationFrame(animation);
+    }
+
+    function dragEnd() {
+        isDragging = false;
+        cancelAnimationFrame(animationID);
+        if (currentTranslate > prevTranslate) {
+            carousel.querySelector('.carousel-control-prev').click();
+        } else if (currentTranslate < prevTranslate) {
+            carousel.querySelector('.carousel-control-next').click();
+        }
+        currentTranslate = 0;
+    }
+
+    function dragMove(event) {
+        if (isDragging) {
+            const currentPosition = getPositionX(event);
+            currentTranslate = currentPosition - startPos;
+        }
+    }
+
+    function getPositionX(event) {
+        return event.type.includes('mouse') ? event.pageX : event.touches[0].clientX;
+    }
+
+    function animation() {
+        setCarouselTranslate(currentTranslate);
+        if (isDragging) requestAnimationFrame(animation);
+    }
+
+    function setCarouselTranslate(translate) {
+        carousel.querySelector('.carousel-inner').style.transform = `translateX(${translate}px)`;
+    }
